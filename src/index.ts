@@ -1,12 +1,12 @@
 import express from "express";
 const app = express();
 
-import indexRoutes from "./routes/index";
+import peopleRoutes from "./routes/people";
 
 // middleware
 app.use(express.json())
 
-app.use(indexRoutes);
+app.use(peopleRoutes);
 app.use(express.urlencoded({extended: false}))
 
 const PORT = process.env.PORT || 5000;

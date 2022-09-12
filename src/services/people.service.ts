@@ -1,14 +1,16 @@
 import {QueryResult} from "pg";
 
-import {pool} from "../database";
 import {people} from "../interface";
 import {toJSON} from "../utils";
+import {pool} from "../config";
 
 export const getList = async (): Promise<any> => {
-    const query: string = "SELECT avatar, name, position, city, company, created_date, id, is_contact AS isContact, is_favorite, social_networks from people";
+    const query: string = "SELECT avatar, name, position, city, company, created_date, id, is_contact, is_favorite, social_networks from people";
     const response: QueryResult = await pool.query(query);
 
-    return response.rows;
+    return response.rows.map((data) => {
+        return toJSON(data)
+    });
 };
 
 export const getOneById = async (id: number): Promise<any> => {
@@ -47,18 +49,7 @@ export const create = async (data:people): Promise<any> => {
     }
     return {
         message: "People added successfully",
-        data: {
-            avatar,
-            name,
-            position,
-            city,
-            company,
-            createdDate,
-            id,
-            isContact,
-            isFavorite,
-            social_networks
-        },
+        data: toJSON(data),
     };
 };
 

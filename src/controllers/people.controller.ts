@@ -2,17 +2,7 @@ import { Request, Response } from "express";
 
 import {create, deleteOne, getList, getOneById, update} from "../services/people.service";
 import {validateCreate, validateDeleteOne, validateGetOne, validateUpdate} from "../model/people.model";
-
-const response400 = (message: Array<string>, res: Response) => {
-    if (message.length > 0) {
-        return res.status(400).json(message);
-    }
-}
-
-const response500 = (err:any, res: Response) => {
-    console.log(err);
-    return res.status(500).json("Internal server error");
-}
+import {response400, response500} from "./index";
 
 export const getPeople = async ( req: Request, res: Response ) => {
     try {

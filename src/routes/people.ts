@@ -7,7 +7,7 @@ import {
   createPeople,
   updatePeople,
   deletePeople,
-} from "../controllers/index.controller";
+} from "../controllers/people.controller";
 
 router.get("/people", getPeople);
 router.get("/people.json", getPeople);

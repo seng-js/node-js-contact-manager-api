@@ -4,7 +4,8 @@ export interface people {
     position: string,
     city: string,
     company: string,
-    createdDate: string,
+    createdDate: number,
+    created_date: number
     id: bigint,
     is_contact: boolean,
     is_favorite: boolean,
