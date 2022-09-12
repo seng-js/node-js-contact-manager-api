@@ -6,6 +6,8 @@ export interface people {
     company: string,
     createdDate: string,
     id: bigint,
+    is_contact: boolean,
+    is_favorite: boolean,
     isContact: boolean,
     isFavorite: boolean,
     social_networks: social_networks

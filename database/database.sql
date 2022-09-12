@@ -1,5 +1,5 @@
 CREATE TABLE people (
-     id SERIAL PRIMARY KEY,
+     id bigserial PRIMARY KEY,
      avatar VARCHAR (100) NOT NULL,
      city VARCHAR (255) NULL,
      company VARCHAR (100) NULL,
@@ -33,7 +33,7 @@ VALUES(
 	false,
 	'Valentina Delaney',
 	'Web Designer',
-	'{\"facebook\":\"https://www.facebook.com/\",\"instagram\":\"https://www.instagram.com/\",\"twitter\":\"https://twitter.com/\",\"youtube\":\"https://www.youtube.com/\"}'
+	'{"facebook":"https://www.facebook.com/","instagram":"https://www.instagram.com/","twitter":"https://twitter.com/","youtube":"https://www.youtube.com/"}'
 	);
 
 INSERT INTO people(
@@ -58,5 +58,33 @@ VALUES(
 	false,
 	'Valentina Delaney2',
 	'Web Designer2',
-	'{\"facebook\":\"https://www.facebook.com/\",\"instagram\":\"https://www.instagram.com/\",\"twitter\":\"https://twitter.com/\",\"youtube\":\"https://www.youtube.com/\"}'
+	'{"facebook":"https://www.facebook.com/","instagram":"https://www.instagram.com/","twitter":"https://twitter.com/","youtube":"https://www.youtube.com/"}'
 	);
+
+INSERT INTO people(
+	id,
+	avatar,
+	city,
+	company,
+	created_date,
+	is_contact,
+	is_favorite,
+	name,
+	position,
+	social_networks
+)
+VALUES(
+	3,
+	'img/img2.jpg',
+	'Ukraine, Kyiv',
+	'Logical',
+	'1661312418872',
+	false,
+	false,
+	'Valentina Delaney2',
+	'Web Designer2',
+	'{"facebook":"https://www.facebook.com/","instagram":"https://www.instagram.com/","twitter":"https://twitter.com/","youtube":"https://www.youtube.com/"}'
+	);
+
+
+=========== Drop table ==============

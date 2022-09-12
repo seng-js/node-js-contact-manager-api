@@ -10,9 +10,10 @@ import {
 } from "../controllers/index.controller";
 
 router.get("/people", getPeople);
+router.get("/people.json", getPeople);
 router.get("/people/:id", getPeopleById);
 router.post("/people", createPeople);
-router.put("/people/:id", updatePeople);
+router.patch("/people/:id", updatePeople);
 router.delete("/people/:id", deletePeople);
 
 export default router;
